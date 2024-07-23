@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Thrilled Posts Filter.",
+  "version": "1.0",
+  "description": "Removes LinkedIn posts containing the word 'thrilled'.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/feed/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+	  "default_popup": "options.html",
+	  "default_icon": {
+		  "16": "icon16.png",
+		  "48": "icon48.png",
+		  "128": "icon128.png"
+	  }
+  },
+  "options_page": "options.html"
+}
