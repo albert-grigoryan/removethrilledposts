@@ -1,4 +1,6 @@
-# RemoveThrilledPosts
+# Remove Thrilled LinkedIn Posts
+
+<img src="img1.png" width="300">
 
 **RemoveThrilledPosts** is a Chrome extension that removes LinkedIn posts containing the word "Thrilled."
 
@@ -6,6 +8,7 @@
 
 - Automatically detects and removes LinkedIn posts that include the word "thrilled".
 - Runs periodically to handle dynamically loaded content.
+- Customizable the filtering with your own list.
 
 ## Installation
 
