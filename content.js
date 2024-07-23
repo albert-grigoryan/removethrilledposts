@@ -1,6 +1,8 @@
 // Function to remove posts based on a list of words (case-insensitive and with word boundaries) and log the removed posts
 function removePosts() {
-  chrome.storage.sync.get('words', (data) => {
+  chrome.storage.sync.get(['words', 'enabled'], (data) => {
+    if (data.enabled === false) return; // Do nothing if disabled
+
     const words = data.words || [];
     if (words.length === 0) return;
 
@@ -15,7 +17,7 @@ function removePosts() {
       if (patterns.some(pattern => pattern.test(textContent))) {
         // Log the removed post's content to the console
         console.log('Removed post:', textContent);
-        
+
         // Remove the post from the DOM
         post.remove();
       }
@@ -35,4 +37,3 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 // Initial call
 removePosts();
-

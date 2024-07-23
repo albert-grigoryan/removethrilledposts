@@ -12,26 +12,20 @@
 
 ## Installation
 
-1. **Clone the repository** (or download the source code):
-   ```bash
-   git clone https://github.com/your-username/removethrilledposts.git
-   ```
+1. Download the sources and unzip. 
 
-2. Navigate to the extension directory:
-  cd linkedin-post-filter
+2. Open Chrome and go to chrome://extensions/.
 
-3. Open Chrome and go to chrome://extensions/.
+3. Enable Developer Mode by toggling the switch in the top right corner.
 
-4. Enable Developer Mode by toggling the switch in the top right corner.
-
-5. Click "Load unpacked" and select the directory where your manifest.json and content.js files are located.
+5. Click "Load unpacked" and select the directory.
 
 The extension is now installed and will start filtering LinkedIn posts containing the word "thrilled".
 
 ## Usage
 
 Navigate to LinkedIn and view your feed.
-Posts containing "Thrilled" will be automatically removed.
+Posts containing "thrilled" will be automatically removed.
 
 ## License
 This project is licensed under the MIT License.

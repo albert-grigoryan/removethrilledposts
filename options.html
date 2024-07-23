@@ -22,16 +22,81 @@
       cursor: pointer;
       margin-left: 10px;
     }
+    .toggle-container {
+      margin-top: 10px;
+    }
+    .toggle-label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(14px);
+    }
+
   </style>
 </head>
 <body>
-  <h1>RemoveThrilledPosts Settings</h1>
-  <label for="word-input">Add a word to remove:</label>
-  <input type="text" id="word-input" placeholder="Enter word">
-  <button id="add-word">Add Word</button>
-  <h2>Words to Remove:</h2>
-  <ul id="word-list"></ul>
-  <script src="options.js"></script>
+<h1>RemoveThrilledPosts Settings</h1>
+
+<!-- Enable/Disable Switch -->
+<div class="toggle-container">
+  <label class="toggle-label" for="enable-toggle">Enable Extension:</label>
+  <label class="switch">
+    <input type="checkbox" id="enable-toggle">
+    <span class="slider round"></span>
+  </label>
+</div>
+
+<!-- Add Words Section -->
+<label for="word-input">Add a word to remove:</label>
+<input type="text" id="word-input" placeholder="Enter word">
+<button id="add-word">Add Word</button>
+
+<!-- Words List -->
+<h2>Words to Remove:</h2>
+<ul id="word-list"></ul>
+
+<script src="options.js"></script>
 </body>
 </html>
-
